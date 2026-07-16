@@ -16,8 +16,8 @@
   --text-dark:  #1c2b3a;
   --text-mid:   rgba(255,255,255,0.82);
   --text-muted: rgba(255,255,255,0.55);
-  --overlay-dark: rgba(10,20,30,0.52);
-  --overlay-mid:  rgba(10,20,30,0.38);
+  --overlay-dark: rgba(10,20,30,0.28);
+  --overlay-mid:  rgba(10,20,30,0.18);
   --transition: 0.4s ease;
 }
 
@@ -103,7 +103,7 @@ html, body {
 }
 
 /* ============================================================
-   TRAIL SIGN — the bike path sign in the middle of the hero
+   TRAIL SIGN — wooden post with stacked directional arrows
    ============================================================ */
 .trail-sign-wrap {
   position: relative;
@@ -116,37 +116,57 @@ html, body {
   opacity: 0;
 }
 
-.sign-post {
-  width: 10px;
-  height: 60px;
-  background: linear-gradient(to bottom, #8b6914, #6b4f0e);
-  border-radius: 2px;
-  margin: 0 auto;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+/* The vertical post — runs the full height behind the signs */
+.sign-post-assembly {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.sign-post-base {
-  width: 10px;
-  height: 40px;
-  background: linear-gradient(to bottom, #6b4f0e, #4a3508);
-  border-radius: 0 0 3px 3px;
-  margin: 0 auto;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+/* Continuous wooden post */
+.sign-post-shaft {
+  width: 18px;
+  background: linear-gradient(to right, #5a3a0a 0%, #8b6318 30%, #a07820 50%, #7a5510 70%, #4a2e08 100%);
+  border-radius: 3px 3px 2px 2px;
+  box-shadow: 3px 0 6px rgba(0,0,0,0.4), -1px 0 3px rgba(0,0,0,0.2);
+  /* height is set inline to match sign stack */
 }
 
+/* Post cap */
+.sign-post-cap {
+  width: 22px;
+  height: 10px;
+  background: linear-gradient(to right, #3a2006, #6b4a10, #8b6318, #6b4a10, #3a2006);
+  border-radius: 3px 3px 0 0;
+  box-shadow: 2px -1px 4px rgba(0,0,0,0.35);
+}
+
+/* Ground stake */
+.sign-post-stake {
+  width: 14px;
+  height: 48px;
+  background: linear-gradient(to right, #2e1804 0%, #5a3a0a 40%, #4a2e08 100%);
+  border-radius: 0 0 2px 2px;
+  clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.45);
+}
+
+/* The signs sit in a column centered on the post */
 .sign-board {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 8px;
-  padding: 0 1rem;
-  max-width: 700px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  position: relative;
+  z-index: 2;
+  padding: 8px 0;
 }
 
+/* Each sign row — arrow pointing left or right off the post */
 .sign-arrow {
   display: flex;
   align-items: center;
-  justify-content: center;
   text-decoration: none;
   cursor: pointer;
   transition: transform var(--transition), filter var(--transition);
@@ -154,45 +174,106 @@ html, body {
 }
 
 .sign-arrow:hover {
-  transform: translateY(-4px) scale(1.04);
-  filter: brightness(1.1);
+  transform: translateX(4px) scale(1.03);
+  filter: brightness(1.12);
+}
+.sign-arrow:nth-child(even):hover {
+  transform: translateX(-4px) scale(1.03);
 }
 
-/* Arrow shape via clip-path — pointing right or left alternating */
+/* Arrow blade — right-pointing by default */
 .sign-arrow-inner {
   position: relative;
-  background: linear-gradient(135deg, #8b6914 0%, #c9973a 50%, #a07820 100%);
-  padding: 0.65rem 1.4rem 0.65rem 1rem;
-  clip-path: polygon(0% 0%, 88% 0%, 100% 50%, 88% 100%, 0% 100%);
-  min-width: 160px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.55rem 1.6rem 0.55rem 1rem;
+  min-width: 170px;
+  /* Wooden plank look */
+  background: linear-gradient(180deg,
+    #b8832a 0%,
+    #c9973a 20%,
+    #d4a648 50%,
+    #b8832a 80%,
+    #9a6e1e 100%
+  );
+  /* Wood grain overlay */
+  box-shadow:
+    0 3px 10px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.15),
+    inset 0 -1px 0 rgba(0,0,0,0.2);
+  /* Right-pointing arrow tip */
+  clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
   text-align: left;
 }
 
-/* Every other sign points the other way */
+/* Left-pointing on even children */
 .sign-arrow:nth-child(even) .sign-arrow-inner {
-  clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 12% 100%, 0% 50%);
-  padding: 0.65rem 1rem 0.65rem 1.4rem;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+  padding: 0.55rem 1rem 0.55rem 1.6rem;
   text-align: right;
-  background: linear-gradient(135deg, #a07820 0%, #c9973a 50%, #8b6914 100%);
+  background: linear-gradient(180deg,
+    #a07820 0%,
+    #b8892e 20%,
+    #c99838 50%,
+    #a07820 80%,
+    #8a6418 100%
+  );
+}
+
+/* Wood grain lines */
+.sign-arrow-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0px,
+    transparent 5px,
+    rgba(0,0,0,0.04) 5px,
+    rgba(0,0,0,0.04) 6px
+  );
+  pointer-events: none;
+}
+
+/* Bolt/nail dots on each sign */
+.sign-arrow-inner::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #e8c060, #7a5510);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+.sign-arrow:nth-child(even) .sign-arrow-inner::after {
+  left: auto;
+  right: 10px;
 }
 
 .sign-label {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a0f00;
   line-height: 1.2;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
 .sign-sub-label {
-  font-size: 0.62rem;
-  color: rgba(255,255,255,0.75);
+  font-size: 0.6rem;
+  color: rgba(30,15,0,0.65);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-top: 1px;
+  margin-top: 2px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ============================================================
@@ -282,7 +363,7 @@ html, body {
 .content-panel {
   background: linear-gradient(to top,
     rgba(10,18,26,0.97) 0%,
-    rgba(10,18,26,0.92) 60%,
+    rgba(10,18,26,0.88) 45%,
     rgba(10,18,26,0.0) 100%
   );
   padding: 3.5rem 2.5rem 3rem;
