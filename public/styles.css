@@ -114,6 +114,7 @@ html, body {
   padding-bottom: 4rem;
   animation: fadeUp 1s 0.3s ease forwards;
   opacity: 0;
+  margin-left: 42%;
 }
 
 /* Post cap — flat top of the pole */
@@ -133,11 +134,13 @@ html, body {
   flex-direction: column;
   align-items: center;
   gap: 7px;
+  /* stacking context so ::before z-index is relative to this element */
   position: relative;
-  z-index: 2;
+  isolation: isolate;
   padding: 10px 0;
 }
 
+/* The pole — sits BEHIND the arrow signs */
 .sign-board::before {
   content: '';
   position: absolute;
@@ -156,7 +159,8 @@ html, body {
   );
   border-radius: 1px;
   box-shadow: 3px 0 6px rgba(0,0,0,0.4), -1px 0 3px rgba(0,0,0,0.15);
-  z-index: 1;
+  /* negative z-index puts it behind siblings inside this stacking context */
+  z-index: -1;
 }
 
 /* Ground stake — pointed bottom of the pole */
@@ -178,6 +182,8 @@ html, body {
   cursor: pointer;
   transition: transform var(--transition), filter var(--transition);
   position: relative;
+  /* Keep signs in front of the ::before pole */
+  z-index: 1;
 }
 
 .sign-arrow:hover {
