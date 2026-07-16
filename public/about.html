@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Your Tour Guide — Bias 2027</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Polaroid card ── */
+    .polaroid-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .polaroid {
+      background: #f5f0e8;
+      padding: 12px 12px 44px;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.55), 0 2px 8px rgba(0,0,0,0.35);
+      transform: rotate(-2.5deg);
+      max-width: 260px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .polaroid img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center top;
+      filter: sepia(18%) contrast(1.05) brightness(0.97);
+    }
+
+    .polaroid-caption {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.72rem;
+      color: #5a4a36;
+      letter-spacing: 0.08em;
+    }
+
+    /* date stamp overlay */
+    .polaroid-stamp {
+      position: absolute;
+      bottom: 28px;
+      right: 16px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.65rem;
+      color: rgba(180, 60, 40, 0.75);
+      letter-spacing: 0.05em;
+      transform: rotate(1deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-bg" style="background-image: url('images/bike.jpg');"></div>
+
+  <nav class="back-nav">
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      All Paths
+    </a>
+    <span class="back-nav-title">2027 Bias Family Vacation</span>
+  </nav>
+
+  <div class="inner-page">
+    <div style="flex:1"></div>
+    <div class="page-hero">
+      <p class="page-eyebrow">Your host for the week</p>
+      <h1 class="page-title">About the Tour Guide</h1>
+      <p class="page-lede">St. Simons Island expert since birth. Credentials: been going since before he could walk.</p>
+    </div>
+
+    <div class="content-panel">
+      <div class="content-inner">
+
+        <div class="polaroid-wrap">
+          <div class="polaroid">
+            <img src="images/tourguide.jpg" alt="Your tour guide, circa 2009" />
+            <div class="polaroid-stamp">JUL 2009</div>
+            <div class="polaroid-caption">St. Simons Island, 2009</div>
+          </div>
+        </div>
+
+        <p class="pull-quote reveal">"I've been coming to St. Simons Island since I was in diapers. I know every bike path, every good restaurant, and exactly which home rentals are worth it. This is my favorite place on earth — and now it's yours for the week."</p>
+
+        <div class="divider reveal"></div>
+
+        <div class="highlight-list">
+          <div class="highlight-item reveal">
+            <div class="highlight-name">Lifelong Regular</div>
+            <div class="highlight-note">Been making the trip to St. Simons every year since childhood. Knows the island the way only someone who grew up visiting it can — not from a guide book, but from decades of actual experience.</div>
+          </div>
+          <div class="highlight-item reveal reveal-d1">
+            <div class="highlight-name">Family Roots Here</div>
+            <div class="highlight-note">Bennie's Red Barn was his parents' first date. His parents are buried at Christ Church. This island isn't just a vacation spot — it's genuinely part of the family's story.</div>
+          </div>
+          <div class="highlight-item reveal reveal-d2">
+            <div class="highlight-name">The Itinerary Philosophy</div>
+            <div class="highlight-note">No overplanning. Bike in the morning, beach by noon, great food in the evening, live music after dark. Let the island set the pace — it knows what it's doing.</div>
+          </div>
+          <div class="highlight-item reveal reveal-d3">
+            <div class="highlight-name">Local Knowledge</div>
+            <div class="highlight-note">Hampton Club for golf. Sweet Mama's for breakfast. East Beach near the Coast Guard Station for the house. Southern Soul for BBQ. Ghost tour on a slow night. The order matters.</div>
+          </div>
+        </div>
+
+        <div class="divider reveal"></div>
+
+        <div class="fact-row reveal">
+          <div class="fact"><div class="fact-value">~30</div><div class="fact-label">years of visits</div></div>
+          <div class="fact"><div class="fact-value">2027</div><div class="fact-label">Best trip yet</div></div>
+          <div class="fact"><div class="fact-value">0</div><div class="fact-label">Tourist traps on the list</div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="path-footer">
+      <a href="index.html">← Home</a>
+      <div class="path-footer-center">
+        <span class="path-dot" onclick="location.href='history.html'"></span>
+        <span class="path-dot" onclick="location.href='stay.html'"></span>
+        <span class="path-dot" onclick="location.href='food.html'"></span>
+        <span class="path-dot" onclick="location.href='things.html'"></span>
+        <span class="path-dot" onclick="location.href='outdoors.html'"></span>
+        <span class="path-dot" onclick="location.href='spa.html'"></span>
+      </div>
+      <a href="history.html">Our History →</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
