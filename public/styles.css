@@ -514,22 +514,92 @@ html, body {
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 640px) {
-  .sign-board {
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
+/* ============================================================
+   RESPONSIVE — tablet 768px
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Sign — shift back toward center on tablet */
+  .trail-sign-wrap {
+    margin-left: 20%;
   }
-  .sign-arrow-inner { min-width: 130px; }
-  .back-nav-title { display: none; }
-  .content-panel { padding: 2rem 1.25rem; }
-  .page-hero { padding: 0 1.25rem 0; }
-  .fact-row { gap: 1.5rem; }
-  .highlight-list { grid-template-columns: 1fr; }
+
+  .page-title {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .pull-quote {
+    font-size: 1.05rem;
+  }
 }
 
+/* ============================================================
+   RESPONSIVE — mobile 640px
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Hero */
+  .hero-top {
+    padding: 2rem 1.25rem 0;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+  .hero-sub {
+    font-size: 0.9rem;
+  }
+
+  /* Sign — centered, no offset on mobile */
+  .trail-sign-wrap {
+    margin-left: 0;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+
+  /* Signs stack in a single centered column */
+  .sign-board {
+    align-items: center;
+  }
+
+  /* Arrows all point right on mobile for consistency */
+  .sign-arrow-inner {
+    min-width: 200px;
+    clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%) !important;
+    padding: 0.55rem 1.6rem 0.55rem 1rem !important;
+    text-align: left !important;
+  }
+
+  /* Inner pages */
+  .back-nav {
+    padding: 1rem 1.25rem;
+  }
+  .back-nav-title { display: none; }
+  .page-hero { padding: 0 1.25rem 0; }
+  .page-title { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+  .page-lede  { font-size: 0.95rem; }
+
+  .content-panel { padding: 2rem 1.25rem 2rem; }
+
+  .highlight-list { grid-template-columns: 1fr; }
+  .fact-row { gap: 1.25rem; }
+  .fact-value { font-size: 1.7rem; }
+
+  .pull-quote { font-size: 1rem; }
+
+  .path-footer {
+    padding: 1.25rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .path-footer a { font-size: 0.72rem; }
+}
+
+/* ============================================================
+   RESPONSIVE — small phone 400px
+   ============================================================ */
 @media (max-width: 400px) {
-  .sign-board { grid-template-columns: 1fr; }
-  .sign-arrow-inner { min-width: 200px; }
+  .sign-arrow-inner { min-width: 170px; }
+  .hero-title { font-size: 1.9rem; }
+  .content-panel { padding: 1.5rem 1rem; }
 }
 
 /* ============================================================

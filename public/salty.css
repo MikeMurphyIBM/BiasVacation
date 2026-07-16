@@ -262,6 +262,30 @@
 
 /* ── Responsive ── */
 @media (max-width: 480px) {
-  #salty-wrap { bottom: 16px; right: 16px; }
-  #salty-chat { width: 280px; }
+  #salty-wrap {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    align-items: flex-end;
+  }
+  #salty-chat {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px 16px 4px 16px;
+  }
+  #salty-char {
+    width: 60px;
+    height: 60px;
+  }
+  #salty-char svg {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 360px) {
+  #salty-messages {
+    min-height: 140px;
+    max-height: 200px;
+  }
 }
