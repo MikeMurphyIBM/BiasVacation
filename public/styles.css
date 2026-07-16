@@ -116,43 +116,18 @@ html, body {
   opacity: 0;
 }
 
-/* The vertical post — runs the full height behind the signs */
-.sign-post-assembly {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Continuous wooden post */
-.sign-post-shaft {
-  width: 18px;
-  background: linear-gradient(to right, #5a3a0a 0%, #8b6318 30%, #a07820 50%, #7a5510 70%, #4a2e08 100%);
-  border-radius: 3px 3px 2px 2px;
-  box-shadow: 3px 0 6px rgba(0,0,0,0.4), -1px 0 3px rgba(0,0,0,0.2);
-  /* height is set inline to match sign stack */
-}
-
-/* Post cap */
+/* Post cap — flat top of the pole */
 .sign-post-cap {
-  width: 22px;
-  height: 10px;
+  width: 24px;
+  height: 12px;
   background: linear-gradient(to right, #3a2006, #6b4a10, #8b6318, #6b4a10, #3a2006);
   border-radius: 3px 3px 0 0;
-  box-shadow: 2px -1px 4px rgba(0,0,0,0.35);
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.35);
+  position: relative;
+  z-index: 3;
 }
 
-/* Ground stake */
-.sign-post-stake {
-  width: 14px;
-  height: 48px;
-  background: linear-gradient(to right, #2e1804 0%, #5a3a0a 40%, #4a2e08 100%);
-  border-radius: 0 0 2px 2px;
-  clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.45);
-}
-
-/* The signs sit in a column centered on the post */
+/* Signs column — ::before draws the pole running through the center */
 .sign-board {
   display: flex;
   flex-direction: column;
@@ -160,7 +135,39 @@ html, body {
   gap: 7px;
   position: relative;
   z-index: 2;
-  padding: 8px 0;
+  padding: 10px 0;
+}
+
+.sign-board::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  background: linear-gradient(to right,
+    #3a2206 0%,
+    #6b4a10 20%,
+    #9a7020 45%,
+    #8b6318 55%,
+    #5a3a0a 80%,
+    #3a2206 100%
+  );
+  border-radius: 1px;
+  box-shadow: 3px 0 6px rgba(0,0,0,0.4), -1px 0 3px rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+/* Ground stake — pointed bottom of the pole */
+.sign-post-stake {
+  width: 16px;
+  height: 52px;
+  background: linear-gradient(to right, #2e1804 0%, #5a3a0a 40%, #4a2e08 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 30% 100%);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 3;
 }
 
 /* Each sign row — arrow pointing left or right off the post */
