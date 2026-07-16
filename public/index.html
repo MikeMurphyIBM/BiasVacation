@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2027 Bias Family Vacation — St. Simons Island</title>
+  <meta name="description" content="A virtual bike tour of St. Simons Island, Georgia — the Bias family's favorite destination." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ======================================================
+       HERO
+  ======================================================= -->
+  <section class="hero" id="top">
+    <div class="hero-overlay"></div>
+    <div class="hero-road"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">St. Simons Island, Georgia &mdash; Summer 2027</p>
+      <h1>2027 Bias Family<br>Vacation</h1>
+      <p class="hero-subtitle">Pick a path. Start pedaling.</p>
+      <p class="hero-tagline">Where every hour is golden and nothing ever really changes — thank goodness.</p>
+
+      <div class="hero-cta-group">
+        <button class="btn-primary" id="hero-ride-btn">
+          🚲 &nbsp;Let's Ride
+        </button>
+        <button class="btn-ghost" id="hero-scroll-btn">
+          Explore the Island ↓
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       TRAIL CHOOSER — hero bottom
+  ======================================================= -->
+  <div class="trail-chooser" id="trail-chooser">
+    <button class="trail-btn active" data-path="history">
+      <span class="trail-icon">🏡</span> My History
+    </button>
+    <button class="trail-btn" data-path="stay">
+      <span class="trail-icon">🌊</span> Where to Stay
+    </button>
+    <button class="trail-btn" data-path="food">
+      <span class="trail-icon">🦀</span> Food &amp; Entertainment
+    </button>
+    <button class="trail-btn" data-path="things">
+      <span class="trail-icon">🏛️</span> Things to Do
+    </button>
+    <button class="trail-btn" data-path="outdoor">
+      <span class="trail-icon">⛳</span> Biking / Golf / Beach
+    </button>
+    <button class="trail-btn" data-path="spa">
+      <span class="trail-icon">💆</span> Spa &amp; Shopping
+    </button>
+  </div>
+
+  <!-- ======================================================
+       STICKY NAV (visible after scroll)
+  ======================================================= -->
+  <nav class="sticky-nav" id="sticky-nav" aria-label="Path navigation">
+    <a href="#top" class="nav-brand">Bias 2027 &mdash; St. Simons</a>
+    <div class="nav-trails">
+      <button class="nav-trail-link active" data-path="history">🏡 History</button>
+      <button class="nav-trail-link" data-path="stay">🌊 Stay</button>
+      <button class="nav-trail-link" data-path="food">🦀 Food</button>
+      <button class="nav-trail-link" data-path="things">🏛️ Explore</button>
+      <button class="nav-trail-link" data-path="outdoor">⛳ Outdoors</button>
+      <button class="nav-trail-link" data-path="spa">💆 Spa</button>
+    </div>
+  </nav>
+
+  <!-- ======================================================
+       MAIN CONTENT
+  ======================================================= -->
+  <main class="site-wrap">
+
+    <!-- ===================================================
+         PATH 1: MY HISTORY
+    ==================================================== -->
+    <section id="path-history" class="path-content active">
+
+      <div class="section-banner">
+        <div class="section-banner-bg" style="background-image: url('https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=1200&q=80');"></div>
+        <div class="section-banner-overlay"></div>
+        <div class="section-banner-text">
+          <p class="section-eyebrow">A Lifetime of Memories</p>
+          <h2>My History with<br>St. Simons Island</h2>
+        </div>
+      </div>
+
+      <div class="section-body">
+
+        <p class="history-lede reveal">
+          "I've been coming here since I was in diapers — and nothing has changed. 
+          That's not a complaint. That's the whole point."
+        </p>
+
+        <div class="memory-quote reveal reveal-delay-1">
+          St. Simons Island operates on its own rhythm. No high-rise condos. No big-box hotels crowding the skyline. 
+          Georgia law and a fierce community commitment to preservation mean this island looks almost exactly as it did 
+          fifty years ago — a rare and beautiful thing. Come as a child. Come back with your children. Come back again 
+          with theirs. The island will be waiting.
+        </div>
+
+        <div class="stat-band reveal reveal-delay-1">
+          <div class="stat-item">
+            <div class="stat-value">11×</div>
+            <div class="stat-label">Travel + Leisure<br>#1 Island in the US</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">30+</div>
+            <div class="stat-label">Miles of<br>Bike Trails</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">1736</div>
+            <div class="stat-label">Fort Frederica<br>Founded</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">1872</div>
+            <div class="stat-label">Lighthouse<br>Built</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">0</div>
+            <div class="stat-label">High-Rise<br>Hotels or Condos</div>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <div class="card reveal">
+            <div class="card-img-placeholder">🌳</div>
+            <div class="card-body">
+              <div class="card-tag">Protected Forever</div>
+              <h3>No Development. On Purpose.</h3>
+              <p>Georgia state law strictly limits development on the island. Combine that with the St. Simons Land Trust — which has preserved over 1,300 acres — and you get an island that genuinely looks like it did when you were a kid. Tall live oaks draped in Spanish moss line every road. No neon signs. No traffic jams.</p>
+            </div>
+          </div>
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">🚲</div>
+            <div class="card-body">
+              <div class="card-tag">Island Life</div>
+              <h3>Leave Your Keys in the Car</h3>
+              <p>This is genuinely one of those places. People wave. Strangers say hello. You can bike everywhere — to the beach, to dinner, to the pier — and nobody locks their door. It's the kind of easy Southern living that feels increasingly rare, and makes you want to stay forever.</p>
+            </div>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">⛵</div>
+            <div class="card-body">
+              <div class="card-tag">Golden Isles</div>
+              <h3>Five Islands, One Unforgettable Place</h3>
+              <p>St. Simons is the anchor of Georgia's Golden Isles — a constellation that includes Sea Island, Jekyll Island, Little St. Simons, and the port city of Brunswick. Each has its own personality, and all are within easy reach by bike, car, or boat.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-callout reveal">
+          <span class="feature-callout-icon">📖</span>
+          <h3>A Place That Has Made Its Mark in History</h3>
+          <p>
+            From the flags of five nations to WWII German U-boat watches in the Atlantic, St. Simons 
+            has been at the center of American history for nearly 300 years. Fort Frederica — a National Monument — 
+            was built in 1736 by General James Oglethorpe to defend Georgia against the Spanish. 
+            Christ Church, where John and Charles Wesley once held services under oak trees, still stands today.
+            The Lighthouse, built in 1872, still guides mariners. History isn't in a museum case here. 
+            You walk through it on a Tuesday morning bike ride.
+          </p>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <h4>1736 — Fort Frederica Founded</h4>
+            <p>General James Oglethorpe builds a fort to defend Georgia against the Spanish. Today it's a National Monument — ruins you can walk through with your kids.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>1735 — John &amp; Charles Wesley</h4>
+            <p>The Wesley brothers hold services under the live oaks. The present Christ Church, built in 1884, stands on the same ground. The Bias family has deep ties here.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>1872 — The Lighthouse</h4>
+            <p>The 104-foot St. Simons Island Lighthouse is built. Still operational. Climb all 129 steps for a panoramic view of Jekyll Island, the mainland, and the Atlantic Ocean.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>1928 — Sea Island's Cloister Opens</h4>
+            <p>The iconic Cloister opens on neighboring Sea Island. It will go on to host presidents, world leaders, and generations of the Bias family's neighbors.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Every Summer Since</h4>
+            <p>The Bias family has been coming back since before memory. The trees haven't changed. The tides haven't changed. That's the magic of St. Simons Island.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================
+         PATH 2: WHERE TO STAY
+    ==================================================== -->
+    <section id="path-stay" class="path-content">
+
+      <div class="section-banner">
+        <div class="section-banner-bg" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80');"></div>
+        <div class="section-banner-overlay"></div>
+        <div class="section-banner-text">
+          <p class="section-eyebrow">East Beach</p>
+          <h2>Where to Stay</h2>
+        </div>
+      </div>
+
+      <div class="section-body">
+
+        <p class="section-intro reveal">
+          On St. Simons Island, location is everything — and <strong>East Beach</strong> is the sweet spot. 
+          Central to the grocery store, the Pier, the beach, and the best restaurants, 
+          with some of the most beautiful private homes on the island.
+        </p>
+
+        <div class="feature-callout reveal">
+          <span class="feature-callout-icon">🌊</span>
+          <h3>East Beach: The Bias Family Headquarters</h3>
+          <p>
+            Near the historic Coast Guard Station on the southeastern end of the island, 
+            East Beach sits at the center of everything. The beach is wide and uncrowded. 
+            The homes here are some of the nicest on the island — many with private pools, 
+            right on or near the water. It's quiet, low-traffic, and positioned perfectly 
+            between the grocery store and the Pier. This is where the family stays.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card reveal">
+            <div class="card-img-placeholder">🏠</div>
+            <div class="card-body">
+              <div class="card-tag">Best Area</div>
+              <h3>East Beach Vacation Rentals</h3>
+              <p>Look for homes near the Coast Guard Station. Private pools are common, and the best properties are just a short walk or quick bike ride to the beach. Search VRBO or Airbnb and filter for East Beach or "East End" for the best options.</p>
+            </div>
+          </div>
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">📍</div>
+            <div class="card-body">
+              <div class="card-tag">Location Win</div>
+              <h3>Everything Within Easy Reach</h3>
+              <p>From East Beach you can bike to the Pier (about 10 minutes), reach the grocery store easily, and access East Beach itself on foot. No car required for most of your favorite things — which is very much the point.</p>
+            </div>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">⭐</div>
+            <div class="card-body">
+              <div class="card-tag">Luxury Option</div>
+              <h3>The King and Prince Resort</h3>
+              <p>A historic St. Simons resort on the ocean, within easy reach of East Beach. Has its own spa. Pools, oceanfront rooms, and a restaurant with a good view. A solid option if you'd prefer a hotel over a rental home.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-grid reveal">
+          <div class="detail-block">
+            <h4>Why East Beach Works</h4>
+            <ul>
+              <li>Near the Coast Guard Station — quiet neighborhood</li>
+              <li>Wide beach with plenty of space — no jockeying for umbrella territory</li>
+              <li>Short bike ride to the Pier and Pier Village restaurants</li>
+              <li>Close to the grocery store (Harris Teeter/Winn-Dixie nearby)</li>
+              <li>Nicest private homes on the island, many with pools</li>
+              <li>Low traffic — very bike-and-walk-friendly</li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h4>What's Nearby</h4>
+            <ul>
+              <li>East Beach &amp; Coast Guard Beach — literally steps away</li>
+              <li>The Pier &amp; Pier Village — dining, shops, putt-putt</li>
+              <li>Neptune Park — oceanfront green space</li>
+              <li>St. Simons Lighthouse Museum — 5-minute bike ride</li>
+              <li>Grocery and provisions — easy access</li>
+              <li>Access to the island's full 30+ mile bike trail system</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="memory-quote reveal">
+          "Near the coast guard station, central to grocery store and beach and pier and restaurants. 
+          Very little traffic. Nicest homes with pools near the beach." — Dad's standing order for the Bias family stay.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================
+         PATH 3: FOOD & ENTERTAINMENT
+    ==================================================== -->
+    <section id="path-food" class="path-content">
+
+      <div class="section-banner">
+        <div class="section-banner-bg" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80');"></div>
+        <div class="section-banner-overlay"></div>
+        <div class="section-banner-text">
+          <p class="section-eyebrow">Local Flavors</p>
+          <h2>Food &amp; Entertainment</h2>
+        </div>
+      </div>
+
+      <div class="section-body">
+
+        <p class="section-intro reveal">
+          St. Simons dining is the real deal — no tourist trap chains to wade through. 
+          Fresh-caught seafood, legendary BBQ, a steakhouse where history was made, 
+          and nightly live music under the Georgia sky.
+        </p>
+
+        <div class="card-grid">
+
+          <div class="card reveal">
+            <div class="card-img-placeholder">🦀</div>
+            <div class="card-body">
+              <div class="card-tag">Seafood</div>
+              <h3>The Crab Trap</h3>
+              <p>A St. Simons institution. Fresh local seafood, great views, and the kind of laid-back atmosphere that makes you realize you should have ordered more. Come hungry.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">🍺</div>
+            <div class="card-body">
+              <div class="card-tag">Fun &amp; Casual</div>
+              <h3>Brogen's</h3>
+              <p>The quintessential St. Simons hangout at the Pier. Cold drinks, good food, a covered outdoor deck, and live music most nights. If you're looking for the post-beach crowd, they're here.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">🦪</div>
+            <div class="card-body">
+              <div class="card-tag">Fresh &amp; Local</div>
+              <h3>Wolf Island Oyster Company</h3>
+              <p>Local oysters, coastal cuisine, and the freshest catch done simply and well. Named after one of the Golden Isles' most pristine wildlife refuges — and the food lives up to the setting.</p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-img-placeholder">🥩</div>
+            <div class="card-body">
+              <div class="card-tag">Family Legacy</div>
+              <h3>Bennie's Red Barn</h3>
+              <p>A St. Simons steakhouse with a story. This is where the Bias parents had their first date. Rustic, warm, and genuinely excellent. Steak done the old Southern way. Going here isn't just dinner — it's a family tradition.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">☀️</div>
+            <div class="card-body">
+              <div class="card-tag">Morning Ritual</div>
+              <h3>Sweet Mama's</h3>
+              <p>The best breakfast and brunch on the island. Lines form for a reason. Get here early, order the specials, and plan a slow morning around it. This is the kind of place that sets the tone for a perfect island day.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">🔥</div>
+            <div class="card-body">
+              <div class="card-tag">As Seen on TV</div>
+              <h3>Southern Soul Barbecue</h3>
+              <p>Featured on a national TV BBQ show — and it deserves every bit of the attention. Slow-smoked, no-frills, soul-deep Georgia barbecue. Located near Redfern Village. If you haven't been, this one's mandatory.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="feature-callout reveal">
+          <span class="feature-callout-icon">🎵</span>
+          <h3>Nightly Live Music</h3>
+          <p>
+            One of St. Simons' best-kept secrets: live music almost every evening. The Pier area 
+            and <strong>Redfern Village</strong> both host regular performers — local and regional acts playing 
+            under the Georgia stars. It's the perfect end to a day on the island. Grab a drink, 
+            find a spot on the waterfront, and let the music carry you.
+          </p>
+        </div>
+
+        <div class="detail-grid reveal">
+          <div class="detail-block">
+            <h4>The Bias Family Must-Eats</h4>
+            <ul>
+              <li>Bennie's Red Barn — steakhouse, first date spot, family history</li>
+              <li>Southern Soul BBQ — nationally recognized, the real deal</li>
+              <li>The Crab Trap — fresh local seafood, island staple</li>
+              <li>Sweet Mama's — best breakfast on the island, go early</li>
+              <li>Brogen's — Pier-area fun, live music, great vibe</li>
+              <li>Wolf Island Oyster Company — fresh oysters and coastal fare</li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h4>Evening Entertainment</h4>
+            <ul>
+              <li>Live music at the Pier — check the weekly schedule</li>
+              <li>Live music at Redfern Village — most Friday &amp; Saturday nights</li>
+              <li>Sunset walks on the pier — one of the best free things on earth</li>
+              <li>Ghost tours — nightly, departs from the Pier area</li>
+              <li>Putt-putt at the Pier — great for the whole family</li>
+              <li>Stargazing on the beach — very little light pollution at East Beach</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================
+         PATH 4: THINGS TO DO
+    ==================================================== -->
+    <section id="path-things" class="path-content">
+
+      <div class="section-banner">
+        <div class="section-banner-bg" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80');"></div>
+        <div class="section-banner-overlay"></div>
+        <div class="section-banner-text">
+          <p class="section-eyebrow">History, Nature &amp; Adventure</p>
+          <h2>Things to Do &amp; Visit</h2>
+        </div>
+      </div>
+
+      <div class="section-body">
+
+        <p class="section-intro reveal">
+          From a 150-year-old lighthouse to a WWII museum, from Sea Island's billionaire estates 
+          to sea turtle releases at sunset — the Golden Isles offer more things to do than 
+          any single trip can hold.
+        </p>
+
+        <div class="card-grid">
+
+          <div class="card reveal">
+            <div class="card-img-placeholder">🏛️</div>
+            <div class="card-body">
+              <div class="card-tag">Iconic Landmark</div>
+              <h3>St. Simons Lighthouse &amp; WWII Museum</h3>
+              <p>Built in 1872 and still active. Climb 129 cast-iron spiral steps for panoramic views of Jekyll Island and the Georgia coast. The adjacent Maritime Museum covers the island's history from Native Americans through World War II, including the U-boat attacks just offshore.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">⛪</div>
+            <div class="card-body">
+              <div class="card-tag">Family &amp; Heritage</div>
+              <h3>Christ Church &amp; Cemetery</h3>
+              <p>Built in 1884 on the same ground where John &amp; Charles Wesley held services in 1735. One of the most serene and historically significant spots on the island. The cemetery holds many of the island's oldest families — including members of the Bias family. A deeply personal stop.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">🏰</div>
+            <div class="card-body">
+              <div class="card-tag">National Monument</div>
+              <h3>Fort Frederica</h3>
+              <p>A National Park Service site — the ruins of General Oglethorpe's 1736 fort. It's where the Battle of Bloody Marsh was fought in 1742, turning back the Spanish for the last time. Walk the ruins, visit the visitor center, and let the Spanish moss set the mood.</p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-img-placeholder">🌊</div>
+            <div class="card-body">
+              <div class="card-tag">Jekyll Island</div>
+              <h3>Driftwood Beach</h3>
+              <p>One of the most photographed beaches in the Southeast. Ancient bleached tree trunks emerge from the sand on Jekyll Island's northern tip — haunting, beautiful, and unlike anything else on the East Coast. Perfect for golden-hour photos and morning walks.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">🐢</div>
+            <div class="card-body">
+              <div class="card-tag">Wildlife &amp; Conservation</div>
+              <h3>Georgia Sea Turtle Center &amp; Releases</h3>
+              <p>Jekyll Island's Georgia Sea Turtle Center is the only sea turtle rehabilitation hospital in the state. Tour the facility, meet recovering turtles, and if you time it right, join a sea turtle release on the beach. During nesting season (May–August), sunrise turtle walks track new nests.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">🏡</div>
+            <div class="card-body">
+              <div class="card-tag">Exclusive &amp; Fascinating</div>
+              <h3>Biking on Sea Island</h3>
+              <p>The wealthiest zip code in Georgia — average home price north of $5 million. You can't stay there without a reservation at The Cloister, but guests and day visitors can bike the island's pristine roads past the Forbes Five-Star resort and some of the most extraordinary private estates in the South.</p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-img-placeholder">🎳</div>
+            <div class="card-body">
+              <div class="card-tag">Classic Fun</div>
+              <h3>Putt-Putt at the Pier</h3>
+              <p>A St. Simons tradition — the miniature golf course right at the Pier is a classic for families of any age. Play a round, grab an ice cream, and watch the sunset over St. Simons Sound. Hard to beat.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">👻</div>
+            <div class="card-body">
+              <div class="card-tag">Night Adventure</div>
+              <h3>Nightly Ghost Tours</h3>
+              <p>With 300 years of history and enough lore to fill a library, St. Simons Island has no shortage of ghost stories. Nightly ghost tours depart from the Pier area and cover the island's most haunted spots — the Lighthouse, the old plantation ruins, and Christ Church cemetery.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">🎡</div>
+            <div class="card-body">
+              <div class="card-tag">Pier &amp; Village</div>
+              <h3>Pier Village</h3>
+              <p>The social center of St. Simons Island. The Pier juts out into the Atlantic — one of only three in Georgia that extends into the ocean. Pier Village has shops, restaurants, live music venues, and the putt-putt course. The best place to be at night.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="memory-quote reveal">
+          "Christ Church — my parents are buried there. Fort Frederica is just an easy walk through history. 
+          And when you're standing at the top of that lighthouse, looking out at the Atlantic, 
+          you understand why people keep coming back."
+        </div>
+
+        <div class="region-fact reveal">
+          <div class="region-icon">🐢</div>
+          <div>
+            <h4>Sea Turtle Season: May–August</h4>
+            <p>Loggerhead sea turtles nest on the island's beaches during summer months. The Georgia Sea Turtle Center at Jekyll Island is the best place to see rescue, rehabilitation, and — if you're lucky — a full release back into the ocean.</p>
+          </div>
+        </div>
+
+        <div class="region-fact reveal">
+          <div class="region-icon">⚓</div>
+          <div>
+            <h4>WWII Offshore</h4>
+            <p>German U-boats patrolled just off the Georgia coast during WWII. The Maritime Museum at the Coast Guard Station covers this chapter of the island's history — a surprisingly gripping story that most visitors don't know about.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================
+         PATH 5: BIKING / GOLF / BEACH
+    ==================================================== -->
+    <section id="path-outdoor" class="path-content">
+
+      <div class="section-banner">
+        <div class="section-banner-bg" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80');"></div>
+        <div class="section-banner-overlay"></div>
+        <div class="section-banner-text">
+          <p class="section-eyebrow">Get Outside</p>
+          <h2>Biking, Golf &amp; Beach</h2>
+        </div>
+      </div>
+
+      <div class="section-body">
+
+        <p class="section-intro reveal">
+          St. Simons was made for people who want to be outside. 30+ miles of paved bike trails, 
+          world-class golf, wide uncrowded beaches, and a conservation-preserved wilderness 
+          for hiking — all on an island you can cross in 20 minutes on two wheels.
+        </p>
+
+        <div class="card-grid">
+
+          <div class="card reveal">
+            <div class="card-img-placeholder">🚲</div>
+            <div class="card-body">
+              <div class="card-tag">The Island Way</div>
+              <h3>30+ Miles of Bike Trails</h3>
+              <p>Wide, paved, well-maintained bike paths run all over the island. You can literally get anywhere — the beach, dinner, the lighthouse, the pier — without touching a car. Rent a beach cruiser or bring your own. This is the definitive way to experience St. Simons.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">🛺</div>
+            <div class="card-body">
+              <div class="card-tag">Easy &amp; Fun</div>
+              <h3>Golf Cart Rentals</h3>
+              <p>If the bikes aren't enough, rent a golf cart and cruise the island's shaded roads. It's the most leisurely way to explore, and families love it. Check rental shops near the Pier and at several locations around the island.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">⛳</div>
+            <div class="card-body">
+              <div class="card-tag">Best Course on the Island</div>
+              <h3>Hampton Club Golf Course</h3>
+              <p>The Bias family favorite. Hampton Club is a gorgeous semi-private course on the northern end of St. Simons — marsh views, live oaks, great conditions. Book a tee time well in advance during summer.</p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-img-placeholder">⛳</div>
+            <div class="card-body">
+              <div class="card-tag">Public Access</div>
+              <h3>Sea Palms Golf Course</h3>
+              <p>The only fully public course on St. Simons Island. Well-maintained, fun layout, good for all skill levels. Sea Palms is your go-to if Hampton Club is booked or you want a more casual round.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">🏌️</div>
+            <div class="card-body">
+              <div class="card-tag">Budget Round</div>
+              <h3>Jekyll Island Golf Club</h3>
+              <p>Just across the water on Jekyll Island, the Golf Club offers the most affordable links-style course in the Golden Isles. The Great Dunes course has been here since 1898. A fun, breezy, no-pretense round with good views.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">🏖️</div>
+            <div class="card-body">
+              <div class="card-tag">Room to Breathe</div>
+              <h3>East Beach &amp; Coast Guard Beach</h3>
+              <p>Wide, uncrowded, and beautiful. East Beach and the adjacent Coast Guard Beach area offer ample space — you won't be right on top of neighboring umbrellas. The water is calm, the sand is soft, and the sunrises are worth an early alarm.</p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-img-placeholder">🌿</div>
+            <div class="card-body">
+              <div class="card-tag">Hiking</div>
+              <h3>Cannon's Point Preserve</h3>
+              <p>644 acres of preserved maritime forest, salt marsh, and ancient history on the northern tip of St. Simons. Hiking and biking trails, kayak access, and ruins dating back 2,500 years to Native American habitation. The best hiking on the island.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">🌳</div>
+            <div class="card-body">
+              <div class="card-tag">Nature Trail</div>
+              <h3>Guale Preserve</h3>
+              <p>Nearly three miles of trails through maritime forest and old dune ridges — protected by the St. Simons Land Trust. Accessible right from the main bike path on Lawrence Road. Perfect for a quiet morning or evening walk.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">🏊</div>
+            <div class="card-body">
+              <div class="card-tag">On Sea Island</div>
+              <h3>Biking Sea Island</h3>
+              <p>Five miles of private beach, world-class facilities, and Georgia's wealthiest zip code — Sea Island connects to St. Simons by causeway. Bike the island's roads for one of the most scenic (and humbling) rides on the East Coast. The Cloister is right there if you need a pit stop.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="stat-band reveal">
+          <div class="stat-item">
+            <div class="stat-value">30+</div>
+            <div class="stat-label">Miles of<br>Paved Bike Trails</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">198</div>
+            <div class="stat-label">Holes of Golf<br>in the Golden Isles</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">5★</div>
+            <div class="stat-label">Sea Island Golf<br>Forbes Rated</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">644</div>
+            <div class="stat-label">Acres at<br>Cannon's Point</div>
+          </div>
+        </div>
+
+        <div class="memory-quote reveal">
+          "Wide bike paths all over the island — 30 miles. Golf cart rentals. 
+          Hampton Club is my favorite golf course. Plenty of beach space at East Beach 
+          — you won't be right on an adjacent umbrella."
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================
+         PATH 6: SPA & SHOPPING
+    ==================================================== -->
+    <section id="path-spa" class="path-content">
+
+      <div class="section-banner">
+        <div class="section-banner-bg" style="background-image: url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=1200&q=80');"></div>
+        <div class="section-banner-overlay"></div>
+        <div class="section-banner-text">
+          <p class="section-eyebrow">Indulge</p>
+          <h2>Spa &amp; Shopping</h2>
+        </div>
+      </div>
+
+      <div class="section-body">
+
+        <p class="section-intro reveal">
+          St. Simons Island delivers on indulgence without pretension. 
+          World-class spas, one-of-a-kind boutiques, and a waterfront shopping 
+          district that feels like a well-kept local secret.
+        </p>
+
+        <div class="feature-callout reveal">
+          <span class="feature-callout-icon">✨</span>
+          <h3>The Spa at Sea Island — Forbes Five-Star</h3>
+          <p>
+            Sixty-five thousand square feet of pure indulgence. The Spa at Sea Island's Cloister has earned a Forbes Five-Star rating and has been consistently ranked among the best resort spas in the United States. Signature massages, advanced facials, holistic therapies, personal training, yoga, Pilates — this is the real deal. 
+            Access requires a stay at The Cloister or The Lodge, or a day spa reservation as a non-guest.
+          </p>
+        </div>
+
+        <div class="card-grid">
+
+          <div class="card reveal">
+            <div class="card-img-placeholder">🌺</div>
+            <div class="card-body">
+              <div class="card-tag">Forbes Five-Star</div>
+              <h3>The Cloister Spa, Sea Island</h3>
+              <p>The gold standard. 65,000 sq ft. Massages, facials, body treatments, a labyrinth walk, sound journeys, and the full Forbes Five-Star treatment. If you're going to splurge once on the trip, this is it.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">🏖️</div>
+            <div class="card-body">
+              <div class="card-tag">On St. Simons</div>
+              <h3>The King and Prince Spa</h3>
+              <p>St. Simons' own spa option at the historic King and Prince Resort. Oceanfront location, full range of treatments. A great choice if you're staying on island and want the spa experience without the Sea Island price tag.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">🛍️</div>
+            <div class="card-body">
+              <div class="card-tag">Must-Visit</div>
+              <h3>Pier Village &amp; Mallery Street</h3>
+              <p>The waterfront shopping hub of St. Simons Island. One-of-a-kind souvenirs, local boutiques, galleries, bait shops, and everything in between — all within easy walking distance of the Pier and Lighthouse. Best experienced on an evening stroll.</p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-img-placeholder">👗</div>
+            <div class="card-body">
+              <div class="card-tag">Local Shopping</div>
+              <h3>Redfern Village</h3>
+              <p>St. Simons' other great shopping district — tree-lined streets with locally owned boutiques, art galleries, and specialty shops. Southern Soul BBQ is right here too, so your shopping trip has a natural pit stop built in.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-img-placeholder">🎨</div>
+            <div class="card-body">
+              <div class="card-tag">Art &amp; Gifts</div>
+              <h3>Local Art Galleries</h3>
+              <p>The Golden Isles has a thriving arts community. Galleries throughout Pier Village and Redfern Village feature work by local and regional artists inspired by the coast, the marshes, and the maritime forest. The perfect place to find something to take home that actually means something.</p>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-img-placeholder">🌿</div>
+            <div class="card-body">
+              <div class="card-tag">Sea Island</div>
+              <h3>The Market at Sea Island</h3>
+              <p>Open to the public — a great stop if you're biking Sea Island. The Market features on-the-go sandwiches, specialty food items, snacks, and Sea Island provisions. A beautiful space that doubles as a quick lunch spot.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="detail-grid reveal">
+          <div class="detail-block">
+            <h4>Spa Highlights</h4>
+            <ul>
+              <li>The Cloister Spa — 65,000 sq ft, Forbes Five-Star, Sea Island</li>
+              <li>King &amp; Prince Spa — St. Simons Island, oceanfront location</li>
+              <li>Sweet Dreams massage — calming oils, Sea Island signature</li>
+              <li>Sea to C facial — powerful vitamin C treatment</li>
+              <li>Labyrinth walks, sound journeys, guided meditation</li>
+              <li>Personal training, yoga, Pilates — all available on Sea Island</li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h4>Shopping Districts</h4>
+            <ul>
+              <li>Pier Village &amp; Mallery Street — waterfront, near the Lighthouse</li>
+              <li>Redfern Village — boutiques, galleries, Southern Soul BBQ</li>
+              <li>The Market at Sea Island — open to public, excellent provisions</li>
+              <li>200+ locally owned specialty shops across the Golden Isles</li>
+              <li>Art galleries throughout both villages</li>
+              <li>Jekyll Island's District Shops at Pier Road — new and excellent</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+  <footer class="site-footer">
+    <p class="footer-title">2027 Bias Family Vacation</p>
+    <p class="footer-sub">St. Simons Island, Georgia &mdash; Golden Isles</p>
+    <div class="footer-links">
+      <a href="https://www.goldenisles.com" target="_blank" rel="noopener">goldenisles.com</a>
+      <a href="https://www.goldenisles.com/places-to-stay/" target="_blank" rel="noopener">Where to Stay</a>
+      <a href="https://www.goldenisles.com/things-to-do/" target="_blank" rel="noopener">Things to Do</a>
+      <a href="https://www.goldenisles.com/places-to-eat/" target="_blank" rel="noopener">Dining Guide</a>
+      <a href="https://seaisland.com" target="_blank" rel="noopener">Sea Island</a>
+    </div>
+    <p class="footer-copy">
+      Created with love for the Bias family &mdash; Georgia's Golden Isles &mdash; 
+      <em>Unhurried. Unspoiled. Unmatched.</em>
+    </p>
+    <p class="footer-copy" style="margin-top:0.5rem; opacity:0.3;">Made with IBM Bob</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
