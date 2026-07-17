@@ -542,10 +542,10 @@ html, body {
     font-size: 0.88rem;
   }
 
-  /* ── Sign — bottom-LEFT so it never clashes with Salty (bottom-right) ── */
+  /* ── Sign — bottom-LEFT, no scale transform (breaks touch targets) ── */
   .trail-sign-wrap {
     position: fixed;
-    bottom: 2rem;
+    bottom: 1.5rem;
     left: 0.5rem;
     right: auto;
     margin-left: 0;
@@ -553,31 +553,42 @@ html, body {
     padding-bottom: 0;
     align-items: center;
     width: auto;
+    /* no transform:scale — kills tap targets on mobile */
     filter: drop-shadow(2px 4px 10px rgba(0,0,0,0.55));
-    transform: scale(0.72);
-    transform-origin: bottom left;
+    z-index: 100;
   }
 
   .sign-post-cap {
-    width: 18px;
-    height: 9px;
+    width: 13px;
+    height: 7px;
   }
 
   .sign-post-stake {
-    height: 38px;
+    height: 28px;
+    width: 9px;
+  }
+
+  /* pole behind signs */
+  .sign-board::before {
     width: 12px;
   }
 
   .sign-board {
-    gap: 4px;
-    padding: 6px 0;
+    gap: 3px;
+    padding: 4px 0;
   }
 
-  /* All arrows point right, compact */
+  /* compact arrow signs — sized directly, no scaling */
+  .sign-arrow {
+    display: flex;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(201,151,58,0.3);
+  }
+
   .sign-arrow-inner {
-    min-width: 130px;
-    max-width: 130px;
-    padding: 0.35rem 1.2rem 0.35rem 0.7rem !important;
+    min-width: 95px;
+    max-width: 95px;
+    padding: 0.28rem 0.9rem 0.28rem 0.5rem !important;
     clip-path: polygon(0% 0%, 88% 0%, 100% 50%, 88% 100%, 0% 100%) !important;
     text-align: left !important;
     background: linear-gradient(180deg,
@@ -586,10 +597,18 @@ html, body {
   }
 
   .sign-label {
-    font-size: 0.72rem;
+    font-size: 0.62rem;
+    white-space: nowrap;
   }
   .sign-sub-label {
-    display: none;   /* too small to read at this scale */
+    display: none;
+  }
+
+  /* nail dot — scale down too */
+  .sign-arrow-inner::after {
+    width: 3px;
+    height: 3px;
+    left: 6px;
   }
 
   /* ── Inner pages ── */
@@ -617,10 +636,15 @@ html, body {
    ============================================================ */
 @media (max-width: 400px) {
   .trail-sign-wrap {
-    transform: scale(0.62);
-    bottom: 1.5rem;
+    bottom: 1rem;
     left: 0.25rem;
-    right: auto;
+  }
+  .sign-arrow-inner {
+    min-width: 80px;
+    max-width: 80px;
+  }
+  .sign-label {
+    font-size: 0.56rem;
   }
   .hero-title    { font-size: 1.75rem; }
   .content-panel { padding: 1.5rem 1rem; }
