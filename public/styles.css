@@ -523,8 +523,7 @@ html, body {
 
 /* ============================================================
    RESPONSIVE — mobile ≤ 640px
-   Sign becomes a small roadside accent, pinned bottom-left.
-   Hero photo dominates; sign is a real-world prop, not a menu.
+   Sign pinned bottom-LEFT, Salty stays bottom-RIGHT — no overlap.
    ============================================================ */
 @media (max-width: 640px) {
 
@@ -543,22 +542,20 @@ html, body {
     font-size: 0.88rem;
   }
 
-  /* ── Sign — small roadside sign, fixed bottom-right (off the path) ── */
+  /* ── Sign — bottom-LEFT so it never clashes with Salty (bottom-right) ── */
   .trail-sign-wrap {
     position: fixed;
     bottom: 2rem;
-    right: 1rem;
-    left: auto;
+    left: 0.5rem;
+    right: auto;
     margin-left: 0;
     margin-top: 0;
     padding-bottom: 0;
     align-items: center;
     width: auto;
-    /* subtle drop shadow so it reads against any photo */
     filter: drop-shadow(2px 4px 10px rgba(0,0,0,0.55));
-    /* small scale — it's a roadside prop, not the hero */
     transform: scale(0.72);
-    transform-origin: bottom right;
+    transform-origin: bottom left;
   }
 
   .sign-post-cap {
@@ -622,8 +619,8 @@ html, body {
   .trail-sign-wrap {
     transform: scale(0.62);
     bottom: 1.5rem;
-    right: 0.25rem;
-    left: auto;
+    left: 0.25rem;
+    right: auto;
   }
   .hero-title    { font-size: 1.75rem; }
   .content-panel { padding: 1.5rem 1rem; }
