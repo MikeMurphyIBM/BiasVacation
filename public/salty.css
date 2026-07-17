@@ -287,14 +287,14 @@
 /* ── Responsive ── */
 @media (max-width: 480px) {
   #salty-wrap {
-    bottom: 12px;
-    right: 12px;
-    left: 12px;
+    bottom: 70px;
+    right: 10px;
+    left: auto;
     align-items: flex-end;
   }
   #salty-chat {
-    width: 100%;
-    max-width: 100%;
+    width: calc(100vw - 24px);
+    max-width: 340px;
     border-radius: 16px 16px 4px 16px;
   }
   #salty-char {
