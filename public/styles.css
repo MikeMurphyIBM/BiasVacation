@@ -543,11 +543,12 @@ html, body {
     font-size: 0.88rem;
   }
 
-  /* ── Sign — small roadside sign, fixed bottom-left ── */
+  /* ── Sign — small roadside sign, fixed bottom-right (off the path) ── */
   .trail-sign-wrap {
     position: fixed;
     bottom: 2rem;
-    left: 1rem;
+    right: 1rem;
+    left: auto;
     margin-left: 0;
     margin-top: 0;
     padding-bottom: 0;
@@ -557,7 +558,7 @@ html, body {
     filter: drop-shadow(2px 4px 10px rgba(0,0,0,0.55));
     /* small scale — it's a roadside prop, not the hero */
     transform: scale(0.72);
-    transform-origin: bottom left;
+    transform-origin: bottom right;
   }
 
   .sign-post-cap {
@@ -621,7 +622,8 @@ html, body {
   .trail-sign-wrap {
     transform: scale(0.62);
     bottom: 1.5rem;
-    left: 0.5rem;
+    right: 0.25rem;
+    left: auto;
   }
   .hero-title    { font-size: 1.75rem; }
   .content-panel { padding: 1.5rem 1rem; }
