@@ -8,14 +8,14 @@
   bottom: 80px;
   right: 28px;
   z-index: 9999;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  /* CRITICAL: without this the fixed div covers the whole page and blocks all taps */
-  width: fit-content;
-  height: fit-content;
+  /* must be auto/inline so it doesn't stretch across the full viewport and block taps */
+  width: auto;
+  max-width: fit-content;
   pointer-events: none;
 }
 
