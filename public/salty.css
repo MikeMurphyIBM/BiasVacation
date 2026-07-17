@@ -13,6 +13,17 @@
   align-items: flex-end;
   gap: 10px;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  /* CRITICAL: without this the fixed div covers the whole page and blocks all taps */
+  width: fit-content;
+  height: fit-content;
+  pointer-events: none;
+}
+
+/* re-enable clicks on the actual interactive elements */
+#salty-chat,
+#salty-char,
+#salty-name {
+  pointer-events: auto;
 }
 
 /* ── The character ── */
