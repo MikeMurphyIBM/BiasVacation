@@ -114,7 +114,8 @@ html, body {
   padding-bottom: 4rem;
   animation: fadeUp 1s 0.3s ease forwards;
   opacity: 0;
-  margin-left: 42%;
+  /* Desktop: shift right so pole clears the bike path center */
+  margin-left: 38%;
 }
 
 /* Post cap — flat top of the pole */
@@ -512,79 +513,99 @@ html, body {
 .path-dot:hover  { background: rgba(255,255,255,0.6); cursor: pointer; }
 
 /* ============================================================
-   RESPONSIVE
-   ============================================================ */
-/* ============================================================
-   RESPONSIVE — tablet 768px
+   RESPONSIVE — tablet ≤ 768px
    ============================================================ */
 @media (max-width: 768px) {
-  /* Sign — shift back toward center on tablet */
-  .trail-sign-wrap {
-    margin-left: 20%;
-  }
-
-  .page-title {
-    font-size: clamp(2rem, 7vw, 3rem);
-  }
-
-  .pull-quote {
-    font-size: 1.05rem;
-  }
+  .trail-sign-wrap { margin-left: 15%; }
+  .page-title      { font-size: clamp(2rem, 7vw, 3rem); }
+  .pull-quote      { font-size: 1.05rem; }
 }
 
 /* ============================================================
-   RESPONSIVE — mobile 640px
+   RESPONSIVE — mobile ≤ 640px
+   Sign becomes a small roadside accent, pinned bottom-left.
+   Hero photo dominates; sign is a real-world prop, not a menu.
    ============================================================ */
 @media (max-width: 640px) {
-  /* Hero */
+
+  /* ── Hero ── */
+  .hero-page {
+    justify-content: flex-start;
+    position: relative;
+  }
   .hero-top {
-    padding: 2rem 1.25rem 0;
+    padding: 2.5rem 1.25rem 0;
   }
   .hero-title {
-    font-size: clamp(2rem, 10vw, 2.8rem);
+    font-size: clamp(1.8rem, 9vw, 2.4rem);
   }
   .hero-sub {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
-  /* Sign — centered, no offset on mobile */
+  /* ── Sign — small roadside sign, fixed bottom-left ── */
   .trail-sign-wrap {
+    position: fixed;
+    bottom: 2rem;
+    left: 1rem;
     margin-left: 0;
+    margin-top: 0;
+    padding-bottom: 0;
     align-items: center;
-    padding-bottom: 2rem;
+    width: auto;
+    /* subtle drop shadow so it reads against any photo */
+    filter: drop-shadow(2px 4px 10px rgba(0,0,0,0.55));
+    /* small scale — it's a roadside prop, not the hero */
+    transform: scale(0.72);
+    transform-origin: bottom left;
   }
 
-  /* Signs stack in a single centered column */
+  .sign-post-cap {
+    width: 18px;
+    height: 9px;
+  }
+
+  .sign-post-stake {
+    height: 38px;
+    width: 12px;
+  }
+
   .sign-board {
-    align-items: center;
+    gap: 4px;
+    padding: 6px 0;
   }
 
-  /* Arrows all point right on mobile for consistency */
+  /* All arrows point right, compact */
   .sign-arrow-inner {
-    min-width: 200px;
-    clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%) !important;
-    padding: 0.55rem 1.6rem 0.55rem 1rem !important;
+    min-width: 130px;
+    max-width: 130px;
+    padding: 0.35rem 1.2rem 0.35rem 0.7rem !important;
+    clip-path: polygon(0% 0%, 88% 0%, 100% 50%, 88% 100%, 0% 100%) !important;
     text-align: left !important;
+    background: linear-gradient(180deg,
+      #b8832a 0%, #c9973a 20%, #d4a648 50%, #b8832a 80%, #9a6e1e 100%
+    ) !important;
   }
 
-  /* Inner pages */
-  .back-nav {
-    padding: 1rem 1.25rem;
+  .sign-label {
+    font-size: 0.72rem;
   }
-  .back-nav-title { display: none; }
-  .page-hero { padding: 0 1.25rem 0; }
-  .page-title { font-size: clamp(1.8rem, 8vw, 2.6rem); }
-  .page-lede  { font-size: 0.95rem; }
+  .sign-sub-label {
+    display: none;   /* too small to read at this scale */
+  }
 
-  .content-panel { padding: 2rem 1.25rem 2rem; }
-
-  .highlight-list { grid-template-columns: 1fr; }
-  .fact-row { gap: 1.25rem; }
-  .fact-value { font-size: 1.7rem; }
-
-  .pull-quote { font-size: 1rem; }
-
-  .path-footer {
+  /* ── Inner pages ── */
+  .back-nav        { padding: 1rem 1.25rem; }
+  .back-nav-title  { display: none; }
+  .page-hero       { padding: 0 1.25rem; }
+  .page-title      { font-size: clamp(1.7rem, 8vw, 2.4rem); }
+  .page-lede       { font-size: 0.92rem; }
+  .content-panel   { padding: 2rem 1.25rem; }
+  .highlight-list  { grid-template-columns: 1fr; }
+  .fact-row        { gap: 1rem; flex-wrap: wrap; }
+  .fact-value      { font-size: 1.6rem; }
+  .pull-quote      { font-size: 0.98rem; }
+  .path-footer     {
     padding: 1.25rem 1rem;
     flex-wrap: wrap;
     gap: 0.75rem;
@@ -594,11 +615,15 @@ html, body {
 }
 
 /* ============================================================
-   RESPONSIVE — small phone 400px
+   RESPONSIVE — small phone ≤ 400px
    ============================================================ */
 @media (max-width: 400px) {
-  .sign-arrow-inner { min-width: 170px; }
-  .hero-title { font-size: 1.9rem; }
+  .trail-sign-wrap {
+    transform: scale(0.62);
+    bottom: 1.5rem;
+    left: 0.5rem;
+  }
+  .hero-title    { font-size: 1.75rem; }
   .content-panel { padding: 1.5rem 1rem; }
 }
 
