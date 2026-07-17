@@ -183,8 +183,10 @@ html, body {
   cursor: pointer;
   transition: transform var(--transition), filter var(--transition);
   position: relative;
-  /* Keep signs in front of the ::before pole */
   z-index: 1;
+  /* clip-path on child clips pointer events too — keep touch target on the <a> */
+  -webkit-tap-highlight-color: rgba(201,151,58,0.35);
+  touch-action: manipulation;
 }
 
 .sign-arrow:hover {
@@ -203,6 +205,8 @@ html, body {
   justify-content: center;
   padding: 0.55rem 1.6rem 0.55rem 1rem;
   min-width: 170px;
+  /* clip-path clips hit area — pass pointer events up to the <a> wrapper */
+  pointer-events: none;
   /* Wooden plank look */
   background: linear-gradient(180deg,
     #b8832a 0%,
